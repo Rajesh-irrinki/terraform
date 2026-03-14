@@ -12,3 +12,11 @@ output "frontend_records" {
   value = aws_route53_record.frontend
   description = "Frontend record output will be printed on console"
 }
+
+output "list_instances" {
+    value = var.instances
+}
+
+output "set_example" {
+    value = var.set_example
+}

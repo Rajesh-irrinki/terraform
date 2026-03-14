@@ -19,7 +19,7 @@ variable "sg_tags" {
 
 variable "instances" {
   type = list(string) 
-  default = ["catalogue","user","cart","frontend"]
+  default = ["catalogue","user","frontend","cart","frontend"]
 }
 
 variable "zone_id" {
@@ -30,4 +30,9 @@ variable "zone_id" {
 variable "domain" {
   type = string
   default = "rajeshirrinki.online"
+}
+
+variable "set_example" {
+  type = set(string)
+  default = ["catalogue", "user", "frontend", "cart", "frontend"]
 }
