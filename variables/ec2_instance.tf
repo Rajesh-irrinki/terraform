@@ -2,7 +2,10 @@ resource "aws_instance" "roboshop"{
     ami = var.ami_id
     instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.allow_all_sg.id]
-    tags = var.ec2_tags
+    tags = {
+        Name = "roboshop-${var.Environment}"
+        Environment = var.Environment
+    }
 }
 
 resource "aws_security_group" "allow_all_sg" {
@@ -28,3 +31,8 @@ resource "aws_security_group" "allow_all_sg" {
     tags = var.sg_tags
 
 }
+# CLI > tfvars > Environment > Variable default
+# command line arugment variable
+# variable in .tfvars file
+# environmental variables
+# variable block
