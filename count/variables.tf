@@ -18,6 +18,16 @@ variable "sg_tags" {
 }
 
 variable "instances" {
-  type = list 
-  default = ["catalogue","user","cart"]
+  type = list(string) 
+  default = ["catalogue","user","cart","frontend"]
+}
+
+variable "zone_id" {
+  type = string
+  default = "Z04304691CJEXLOI5ZISX"
+}
+
+variable "domain" {
+  type = string
+  default = "rajeshirrinki.online"
 }
