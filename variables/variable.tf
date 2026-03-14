@@ -58,5 +58,12 @@ variable "sg_tags" {
         Project = "roboshop-tf"
         Environment = "dev"
     }
-  
+}
+
+variable "ec2_tags" {
+    type = map
+    default = {
+        Name = "roboshop-tf"
+        Project = "roboshop"
+    }
 }
