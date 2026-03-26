@@ -4,7 +4,7 @@ resource "aws_route53_record" "www" {
     name = "${var.instances[count.index]}.${var.domain}"
     type = "A"
     ttl = 300
-    records = [aws_instance.roboshop[count.index].private_ip]
+    records = [aws_instances.roboshop[count.index].private_ip]
 }
 
 resource "aws_route53_record" "frontend" {
@@ -12,5 +12,5 @@ resource "aws_route53_record" "frontend" {
     name = "roboshop.${var.domain}"
     ttl = 300
     type = "A"
-    records = [aws_instance.roboshop[index(var.instances, "frontend")].public_ip]
+    records = [aws_instances.roboshop[index(var.instances, "frontend")].public_ip]
 }
