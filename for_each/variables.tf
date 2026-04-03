@@ -28,7 +28,7 @@ variable instances {
     default = {
         mongodb = "t3.micro"
         user = "t3.micro"
-        mysql = "t2.small"
+        mysql = "t2.micro"
         frontend = "t3.micro"
     }
 }
