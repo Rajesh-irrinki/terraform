@@ -40,3 +40,9 @@ resource "aws_security_group" "allow-all-sg-tf" {
         Environment = "dev"
     }
 }
+
+# precedence of variable values :
+# 1. Value will be assigned from CLI
+# 2. Value from .tfvars file
+# 3. Value from the environmental variables
+# 4. default value
