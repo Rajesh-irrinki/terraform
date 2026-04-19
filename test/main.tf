@@ -1,6 +1,11 @@
+# locals {
+#   instance_type = "t3.medium"
+# }
+
 resource "aws_instance" "roboshop" {
     ami = var.ami_id
     instance_type = var.instance_type
+    # instance_type = local.instance_type
     vpc_security_group_ids = [aws_security_group.allow-all-sg-tf.id]
 
     tags = {
