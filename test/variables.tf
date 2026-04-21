@@ -5,7 +5,11 @@ variable "ami_id" {
 
 variable "instance_type" {
     type = string
-    default = "t3.micro"
+
+    validation {
+        condition = contains (["t3.micro"],var.instance_type)
+        error_message = "Instance type must be t3.micro"
+    }
 }
 
 variable "zone_id" {
@@ -22,9 +26,9 @@ variable "tags" {
     }
 }
 
-variable "port_number" {
-    type = number
-    default = 0
+variable "port" {
+    type = list(number)
+    description = "List of port numbers for creating security group rules"
 }
 
 variable "cidr_blocks" {
@@ -34,4 +38,9 @@ variable "cidr_blocks" {
 variable "terraform" {
     type = bool
     default = true
+}
+
+variable "instances" {
+    type = list 
+    description = "List of Instances"
 }
